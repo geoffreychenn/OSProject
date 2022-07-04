@@ -1,0 +1,30 @@
+tutorial notes
+    use tlb_random over tlb_write
+    dont need tlb_probe - only need tlb_random and tlb_read
+    ASID = PID
+
+    as_define_stack calls as_define_region
+        set read and write to 1
+        set executable to 0
+        return stack pointer - where stack pointer starts in memory - check dumbvm
+    
+    as_prepare_load
+    as_complete_load
+    have flag in addrspace struct for when prepare and complete are called
+
+    vm_fault
+        copy tutor code
+
+
+Per process virtual memory space/table
+Per process 3 level page table
+    8 bits - 256 entries - points to 2nd level table
+    6 bits - 64 entries - points to 3rd level table
+    6 bits - 64 entries - contains frame number/physical address
+    12 bits offset
+    kmalloced and elements inserted as required - dynamic data structure
+
+Global TLB
+    
+
+Global physical address space/table
